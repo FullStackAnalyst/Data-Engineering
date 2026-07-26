@@ -1,0 +1,8 @@
+{
+  "categorical_features": [
+    "protocol_type",
+    "service",
+    "flag"
+  ],
+  "encoders_saved_at": "2026-07-26T20:13:12.007061"
+}
