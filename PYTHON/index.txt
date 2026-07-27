@@ -1,316 +1,240 @@
-Samples: 148,517 | Features: 43
-target
-0    51.88
-1    48.12
-Name: proportion, dtype: float64
-category
-Normal    51.88
-DoS       35.95
-Probe      9.48
-R2L        2.61
-U2R        0.08
-Name: proportion, dtype: float64
+Train  Test
+DoS      36822  7460
+Normal   53874  9711
+Probe     9267  2421
+R2L        769  2885
+U2R         46    67
+Unknown      0     0
 
-Features: (148517, 41) | Classes: ['DoS', 'Normal', 'Probe', 'R2L', 'U2R']
-
-Train: (89109, 41) | Val: (29704, 41) | Test: (29704, 41)
-Train class balance:
-target
-0    0.5188
-1    0.4812
-Name: proportion, dtype: float64
-Val class balance:
-target
-0    0.5188
-1    0.4812
-Name: proportion, dtype: float64
-Test class balance:
-target
-0    0.5188
-1    0.4812
-Name: proportion, dtype: float64
-
-sklearn components: 40 | variance retained: 1.0000
-custom components:  40 | variance retained: 1.0000
-max diff: 4.92e-11 | variance diff: 0.00e+00
-80% variance: 16 components
-90% variance: 21 components
-95% variance: 25 components
-99% variance: 30 components
-
-Decision Tree: best f1=0.9929 | params={'min_samples_split': 5, 'min_samples_leaf': 1, 'max_depth': 25, 'criterion': 'gini'}
-Random Forest: best f1=0.9950 | params={'n_estimators': 100, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': 25}
-Logistic Regression: best f1=0.9335 | params={'max_iter': 500, 'C': np.float64(100.0)}
-
-No PCA | Decision Tree | threshold=0.4375 | acc=0.9941
-No PCA | Random Forest | threshold=0.4600 | acc=0.9959
-No PCA | Logistic Regression | threshold=0.4952 | acc=0.9377
-PCA (sklearn) | Decision Tree | threshold=0.7500 | acc=0.9870
-PCA (sklearn) | Random Forest | threshold=0.4917 | acc=0.9917
-PCA (sklearn) | Logistic Regression | threshold=0.4938 | acc=0.9376
-PCA (custom) | Decision Tree | threshold=0.7500 | acc=0.9870
-PCA (custom) | Random Forest | threshold=0.4917 | acc=0.9917
-PCA (custom) | Logistic Regression | threshold=0.4942 | acc=0.9375
-Variant              No PCA  PCA (custom)  PCA (sklearn)
-Model                                                   
-Decision Tree        0.9941        0.9870         0.9870
-Logistic Regression  0.9377        0.9375         0.9376
-Random Forest        0.9959        0.9917         0.9917
-
-Best models by F1:
-           Model        Variant        F1  Accuracy    Recall
-1  Random Forest         No PCA  0.995763  0.995926  0.994753
-0  Decision Tree         No PCA  0.993879  0.994109  0.993983
-4  Random Forest  PCA (sklearn)  0.991338  0.991685  0.988946
-7  Random Forest   PCA (custom)  0.991338  0.991685  0.988946
-3  Decision Tree  PCA (sklearn)  0.986462  0.987005  0.983908
-
-Stats by variant:
-                 mean     std     min     max
-Variant                                      
-No PCA         0.9759  0.0331  0.9377  0.9959
-PCA (custom)   0.9721  0.0300  0.9375  0.9917
-PCA (sklearn)  0.9721  0.0300  0.9376  0.9917
-
-Stats by model:
-                       mean     std     min     max
-Model                                              
-Decision Tree        0.9894  0.0041  0.9870  0.9941
-Logistic Regression  0.9376  0.0001  0.9375  0.9377
-Random Forest        0.9931  0.0024  0.9917  0.9959
-
-Variant              No PCA  PCA (custom)  PCA (sklearn)
-Model                                                   
-Decision Tree         99.41         98.70          98.70
-Logistic Regression   93.77         93.75          93.76
-Random Forest         99.59         99.17          99.17
-
-Accuracy by variant:
-                 mean     std     min     max
-Variant                                      
-No PCA         0.9759  0.0331  0.9377  0.9959
-PCA (custom)   0.9721  0.0300  0.9375  0.9917
-PCA (sklearn)  0.9721  0.0300  0.9376  0.9917
-Best Accuracy: Random Forest (No PCA) = 0.9959
-
-Precision by variant:
-                 mean     std     min     max
-Variant                                      
-No PCA         0.9799  0.0267  0.9492  0.9968
-PCA (custom)   0.9772  0.0246  0.9489  0.9937
-PCA (sklearn)  0.9773  0.0246  0.9490  0.9937
-Best Precision: Random Forest (No PCA) = 0.9968
-
-Recall by variant:
-                 mean     std     min     max
-Variant                                      
-No PCA         0.9695  0.0431  0.9197  0.9948
-PCA (custom)   0.9642  0.0386  0.9197  0.9889
-PCA (sklearn)  0.9642  0.0386  0.9198  0.9889
-Best Recall: Random Forest (No PCA) = 0.9948
-
-F1 by variant:
-                 mean     std     min     max
-Variant                                      
-No PCA         0.9746  0.0350  0.9342  0.9958
-PCA (custom)   0.9706  0.0318  0.9341  0.9913
-PCA (sklearn)  0.9707  0.0317  0.9342  0.9913
-Best F1: Random Forest (No PCA) = 0.9958
-
-Train: 89,109 | Val: 29,704 | Test: 29,704
-Train: DoS=32032 | Normal=46232 | Probe=8446 | R2L=2328 | U2R=71
-Val: DoS=10677 | Normal=15411 | Probe=2816 | R2L=776 | U2R=24
-Test: DoS=10678 | Normal=15411 | Probe=2815 | R2L=776 | U2R=24
-PCA components: 40 | variance retained: 1.0000
-
-Accuracy                 Macro F1                
-Split                   Test   Train     Val     Test   Train     Val
-Model                                                                
-Decision Tree         0.9944  0.9986  0.9942   0.9480  0.9774  0.9126
-Logistic Regression   0.9417  0.9416  0.9413   0.7810  0.7475  0.7416
-Random Forest         0.9951  0.9995  0.9952   0.9052  0.9970  0.9129
-
-Overfitting gap (Train - Val):
-Model
-Decision Tree          0.0044
-Random Forest          0.0043
-Logistic Regression    0.0003
-Name: Accuracy, dtype: float64
-
-No PCA | Decision Tree | acc=0.9944 | macro_f1=0.9480
-No PCA | Random Forest | acc=0.9951 | macro_f1=0.9052
-No PCA | Logistic Regression | acc=0.9417 | macro_f1=0.7810
-PCA | Decision Tree | acc=0.9869 | macro_f1=0.8744
-PCA | Random Forest | acc=0.9917 | macro_f1=0.9104
-PCA | Logistic Regression | acc=0.9421 | macro_f1=0.7817
-Variant              No PCA     PCA
-Model                              
-Decision Tree        0.9944  0.9869
-Logistic Regression  0.9417  0.9421
-Random Forest        0.9951  0.9917
-
-Best models by Weighted F1:
-                 Model Variant  Weighted F1  Accuracy  Macro F1
-1        Random Forest  No PCA     0.994976  0.995085  0.905158
-0        Decision Tree  No PCA     0.994394  0.994378  0.948050
-4        Random Forest     PCA     0.991549  0.991651  0.910430
-3        Decision Tree     PCA     0.986873  0.986938  0.874385
-5  Logistic Regression     PCA     0.938354  0.942062  0.781724
-
-Minority class alerts (recall < 0.50):
-                 Model Variant Class    Recall
-0        Random Forest  No PCA   U2R  0.458333
-1  Logistic Regression  No PCA   R2L  0.305412
-2  Logistic Regression     PCA   R2L  0.307990
-
-Stats by variant:
-           mean     std     min     max
-Variant                                
-No PCA   0.9771  0.0306  0.9417  0.9951
-PCA      0.9736  0.0274  0.9421  0.9917
-
-Stats by model:
-                       mean     std     min     max
-Model                                              
-Decision Tree        0.9907  0.0053  0.9869  0.9944
-Logistic Regression  0.9419  0.0002  0.9417  0.9421
-Random Forest        0.9934  0.0024  0.9917  0.9951
-
-Accuracy:
-Variant              No PCA    PCA
-Model                             
-Decision Tree         99.44  98.69
-Logistic Regression   94.17  94.21
-Random Forest         99.51  99.17
-
-Macro Precision:
-Variant              No PCA     PCA
-Model                              
-Decision Tree        0.9434  0.8868
-Logistic Regression  0.8825  0.8830
-Random Forest        0.9599  0.9546
-
-Macro Recall:
-Variant              No PCA     PCA
-Model                              
-Decision Tree        0.9529  0.8638
-Logistic Regression  0.7282  0.7289
-Random Forest        0.8737  0.8815
-
-Macro F1:
-Variant              No PCA     PCA
-Model                              
-Decision Tree        0.9480  0.8744
-Logistic Regression  0.7810  0.7817
-Random Forest        0.9052  0.9104
-
-Weighted Precision:
-Variant              No PCA     PCA
-Model                              
-Decision Tree        0.9944  0.9868
-Logistic Regression  0.9374  0.9378
-Random Forest        0.9950  0.9915
-
-Weighted Recall:
-Variant              No PCA     PCA
-Model                              
-Decision Tree        0.9944  0.9869
-Logistic Regression  0.9417  0.9421
-Random Forest        0.9951  0.9917
-
-Weighted F1:
-Variant              No PCA     PCA
-Model                              
-Decision Tree        0.9944  0.9869
-Logistic Regression  0.9380  0.9384
-Random Forest        0.9950  0.9915
-
-Recall by Model, Class, Variant:
-Variant                     No PCA     PCA
-Model               Class                 
-Decision Tree       DoS     0.9992  0.9978
-                    Normal  0.9946  0.9888
-                    Probe   0.9890  0.9755
-                    R2L     0.9485  0.8570
-                    U2R     0.8333  0.5000
-Logistic Regression DoS     0.9827  0.9831
-                    Normal  0.9631  0.9632
-                    Probe   0.8480  0.8487
-                    R2L     0.3054  0.3080
-                    U2R     0.5417  0.5417
-Random Forest       DoS     0.9995  0.9991
-                    Normal  0.9966  0.9934
-                    Probe   0.9954  0.9869
-                    R2L     0.9188  0.8866
-                    U2R     0.4583  0.5417
-
-Minority class alert (recall < 0.50):
-                  Model Variant Class    Recall  Support
-9         Random Forest  No PCA   U2R  0.458333       24
-13  Logistic Regression  No PCA   R2L  0.305412      776
-28  Logistic Regression     PCA   R2L  0.307990      776
-
-Best minority class performance:
-U2R: Decision Tree (No PCA) recall=0.8333
-R2L: Decision Tree (No PCA) recall=0.9485
+n_components   DT_U2R   DT_R2L  DT_MacroF1   RF_U2R   RF_R2L  RF_MacroF1   LR_U2R   LR_R2L  LR_MacroF1
+           29 0.253731 0.062392    0.446028 0.283582 0.054073    0.469342 0.477612 0.191681    0.467284
+           49 0.313433 0.052686    0.474709 0.283582 0.058232    0.482021 0.477612 0.197920    0.458931
+           72 0.313433 0.039168    0.425874 0.283582 0.060659    0.486273 0.492537 0.155286    0.440564
+           87 0.194030 0.088735    0.427305 0.253731 0.061352    0.487310 0.522388 0.152513    0.449743
+           94 0.208955 0.098440    0.426130 0.268657 0.048527    0.486904 0.447761 0.154246    0.445824
+          105 0.268657 0.085962    0.435337 0.208955 0.052340    0.473833 0.492537 0.158059    0.457525
+          121 0.388060 0.078336    0.446556 0.253731 0.048873    0.472652 0.537313 0.173310    0.471824
 
 Binary experiments: 9 | Multiclass experiments: 6
-
-Model Variant Class  n_samples  point_estimate  ci_lower  ci_upper  ci_width
-      Decision Tree  No PCA   U2R         24          0.8333    0.6667    0.9583    0.2917
-      Decision Tree  No PCA   R2L        776          0.9485    0.9343    0.9639    0.0296
-      Decision Tree     PCA   U2R         24          0.5000    0.2917    0.7083    0.4167
-      Decision Tree     PCA   R2L        776          0.8570    0.8338    0.8814    0.0477
-      Random Forest  No PCA   U2R         24          0.4583    0.2500    0.6667    0.4167
-      Random Forest  No PCA   R2L        776          0.9188    0.9008    0.9381    0.0374
-      Random Forest     PCA   U2R         24          0.5417    0.3333    0.7500    0.4167
-      Random Forest     PCA   R2L        776          0.8866    0.8660    0.9098    0.0438
-Logistic Regression  No PCA   U2R         24          0.5417    0.3333    0.7500    0.4167
-Logistic Regression  No PCA   R2L        776          0.3054    0.2732    0.3376    0.0644
-Logistic Regression     PCA   U2R         24          0.5417    0.3333    0.7500    0.4167
-Logistic Regression     PCA   R2L        776          0.3080    0.2771    0.3402    0.0631
+              Model Variant Class  n_samples  point_estimate  ci_lower  ci_upper  ci_width
+      Decision Tree  No PCA   U2R         67          0.3881    0.2687    0.5075    0.2388
+      Decision Tree  No PCA   R2L       2885          0.0783    0.0686    0.0891    0.0205
+      Random Forest  No PCA   U2R         67          0.2537    0.1493    0.3731    0.2239
+      Random Forest  No PCA   R2L       2885          0.0489    0.0412    0.0565    0.0153
+Logistic Regression  No PCA   U2R         67          0.5373    0.4179    0.6567    0.2388
+Logistic Regression  No PCA   R2L       2885          0.1733    0.1594    0.1868    0.0274
+      Decision Tree     PCA   U2R         67          0.1940    0.1045    0.2985    0.1940
+      Decision Tree     PCA   R2L       2885          0.1099    0.0984    0.1217    0.0232
+      Random Forest     PCA   U2R         67          0.1940    0.1045    0.2836    0.1791
+      Random Forest     PCA   R2L       2885          0.0614    0.0523    0.0704    0.0180
+Logistic Regression     PCA   U2R         67          0.4776    0.3582    0.5970    0.2388
+Logistic Regression     PCA   R2L       2885          0.1775    0.1636    0.1910    0.0274
 
 CI width by class:
          mean     min     max
 Class                        
-R2L    0.0477  0.0296  0.0644
-U2R    0.3958  0.2917  0.4167
+R2L    0.0220  0.0153  0.0274
+U2R    0.2189  0.1791  0.2388
 
 Best minority class recall:
-U2R: Decision Tree (No PCA) = 0.8333 [0.6667, 0.9583]
-R2L: Decision Tree (No PCA) = 0.9485 [0.9343, 0.9639]
+U2R: Logistic Regression (No PCA) = 0.5373 [0.4179, 0.6567]
+R2L: Logistic Regression (PCA) = 0.1775 [0.1636, 0.1910]
 
-C:\Users\arsic\AppData\Roaming\Python\Python314\site-packages\sklearn\linear_model\_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 500 iteration(s) (status=1):
-STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+Accuracy by variant:
+                 mean     std     min     max
+Variant                                      
+No PCA         0.7842  0.0249  0.7597  0.8095
+PCA (fast)     0.7781  0.0161  0.7600  0.7909
+PCA (sklearn)  0.7780  0.0162  0.7598  0.7909
+Best Accuracy: Random Forest (No PCA) = 0.8095
 
-Increase the number of iterations to improve the convergence (max_iter=500).
-You might also want to scale the data as shown in:
-    https://scikit-learn.org/stable/modules/preprocessing.html
-Please also refer to the documentation for alternative solver options:
-    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
-  n_iter_i = _check_optimize_result(
-C:\Users\arsic\AppData\Roaming\Python\Python314\site-packages\sklearn\linear_model\_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 500 iteration(s) (status=1):
-STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+Precision by variant:
+                 mean     std     min     max
+Variant                                      
+No PCA         0.9366  0.0290  0.9143  0.9693
+PCA (fast)     0.9219  0.0071  0.9145  0.9287
+PCA (sklearn)  0.9218  0.0073  0.9142  0.9287
+Best Precision: Random Forest (No PCA) = 0.9693
 
-Increase the number of iterations to improve the convergence (max_iter=500).
-You might also want to scale the data as shown in:
-    https://scikit-learn.org/stable/modules/preprocessing.html
-Please also refer to the documentation for alternative solver options:
-    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
-  n_iter_i = _check_optimize_result(
- n_components   DT_U2R   DT_R2L  DT_MacroF1   RF_U2R   RF_R2L  RF_MacroF1   LR_U2R   LR_R2L  LR_MacroF1
-           18 0.583333 0.877577    0.889679 0.625000 0.886598    0.919656 0.333333 0.274485    0.710181
-           21 0.541667 0.868557    0.876405 0.625000 0.890464    0.920063 0.541667 0.204897    0.738839
-           25 0.583333 0.886598    0.879609 0.625000 0.889175    0.920402 0.416667 0.248711    0.727032
-           28 0.541667 0.875000    0.881645 0.625000 0.886598    0.916578 0.500000 0.238402    0.749624
-           30 0.541667 0.869845    0.884027 0.625000 0.890464    0.920604 0.541667 0.238402    0.757372
-           36 0.541667 0.855670    0.879217 0.458333 0.889175    0.896612 0.541667 0.307990    0.780099
-           41 0.833333 0.948454    0.948050 0.458333 0.918814    0.905158 0.541667 0.305412    0.781001
+Recall by variant:
+                 mean     std     min     max
+Variant                                      
+No PCA         0.6660  0.0256  0.6376  0.6871
+PCA (fast)     0.6666  0.0266  0.6380  0.6906
+PCA (sklearn)  0.6665  0.0267  0.6379  0.6906
+Best Recall: Random Forest (PCA (sklearn)) = 0.6906
 
-Train   Test
-DoS     32032  10678
-Normal  46232  15411
-Probe    8446   2815
-R2L      2328    776
-U2R        71     24
+F1 by variant:
+                 mean     std     min     max
+Variant                                      
+No PCA         0.7784  0.0265  0.7513  0.8042
+PCA (fast)     0.7736  0.0198  0.7516  0.7899
+PCA (sklearn)  0.7735  0.0198  0.7515  0.7899
+Best F1: Random Forest (No PCA) = 0.8042
+                    Accuracy                 Macro F1                
+Split                   Test   Train     Val     Test   Train     Val
+Model                                                                
+Decision Tree         0.7561  0.9999  0.9981   0.4466  0.8333  0.7779
+Logistic Regression   0.7687  0.9840  0.9704   0.4718  0.8200  0.5904
+Random Forest         0.7477  0.9999  0.9989   0.4727  0.8333  0.8032
+
+Overfitting gap (Train - Val):
+Model
+Decision Tree          0.0019
+Random Forest          0.0010
+Logistic Regression    0.0136
+Name: Accuracy, dtype: float64
+No PCA | Decision Tree | acc=0.7561 | macro_f1=0.4466
+No PCA | Random Forest | acc=0.7477 | macro_f1=0.4727
+No PCA | Logistic Regression | acc=0.7687 | macro_f1=0.4718
+PCA | Decision Tree | acc=0.7627 | macro_f1=0.4417
+PCA | Random Forest | acc=0.7801 | macro_f1=0.4768
+PCA | Logistic Regression | acc=0.7739 | macro_f1=0.4740
+Variant              No PCA     PCA
+Model                              
+Decision Tree        0.7561  0.7627
+Logistic Regression  0.7687  0.7739
+Random Forest        0.7477  0.7801
+
+Best models by Weighted F1:
+                 Model Variant  Weighted F1  Accuracy  Macro F1
+5  Logistic Regression     PCA     0.756276  0.773864  0.473974
+2  Logistic Regression  No PCA     0.751200  0.768675  0.471824
+4        Random Forest     PCA     0.741094  0.780119  0.476761
+3        Decision Tree     PCA     0.732114  0.762731  0.441703
+0        Decision Tree  No PCA     0.723730  0.756121  0.446556
+
+Minority class alerts (recall < 0.50):
+                  Model Variant Class    Recall
+0         Decision Tree  No PCA   U2R  0.388060
+1         Decision Tree  No PCA   R2L  0.078336
+2         Random Forest  No PCA   U2R  0.253731
+3         Random Forest  No PCA   R2L  0.048873
+4   Logistic Regression  No PCA   R2L  0.173310
+5         Decision Tree     PCA   U2R  0.194030
+6         Decision Tree     PCA   R2L  0.109879
+7         Random Forest     PCA   U2R  0.194030
+8         Random Forest     PCA   R2L  0.061352
+9   Logistic Regression     PCA   U2R  0.477612
+10  Logistic Regression     PCA   R2L  0.177470
+
+Stats by variant:
+           mean     std     min     max
+Variant                                
+No PCA   0.7575  0.0106  0.7477  0.7687
+PCA      0.7722  0.0088  0.7627  0.7801
+
+Stats by model:
+                       mean     std     min     max
+Model                                              
+Decision Tree        0.7594  0.0047  0.7561  0.7627
+Logistic Regression  0.7713  0.0037  0.7687  0.7739
+Random Forest        0.7639  0.0229  0.7477  0.7801
+
+Recall by Model, Class, Variant:
+Variant                      No PCA     PCA
+Model               Class                  
+Decision Tree       DoS      0.8161  0.7597
+                    Normal   0.9199  0.9629
+                    Probe    0.7323  0.7629
+                    R2L      0.0783  0.1099
+                    U2R      0.3881  0.1940
+                    Unknown  0.0000  0.0000
+Logistic Regression DoS      0.8122  0.8221
+                    Normal   0.9159  0.9164
+                    Probe    0.7600  0.7724
+                    R2L      0.1733  0.1775
+                    U2R      0.5373  0.4776
+                    Unknown  0.0000  0.0000
+Random Forest       DoS      0.7495  0.8028
+                    Normal   0.9733  0.9736
+                    Probe    0.6836  0.8067
+                    R2L      0.0489  0.0614
+                    U2R      0.2537  0.1940
+                    Unknown  0.0000  0.0000
+
+Minority class alert (recall < 0.50):
+                  Model Variant Class    Recall  Support
+3         Decision Tree  No PCA   R2L  0.078336     2885
+4         Decision Tree  No PCA   U2R  0.388060       67
+9         Random Forest  No PCA   R2L  0.048873     2885
+10        Random Forest  No PCA   U2R  0.253731       67
+15  Logistic Regression  No PCA   R2L  0.173310     2885
+21        Decision Tree     PCA   R2L  0.109879     2885
+22        Decision Tree     PCA   U2R  0.194030       67
+27        Random Forest     PCA   R2L  0.061352     2885
+28        Random Forest     PCA   U2R  0.194030       67
+33  Logistic Regression     PCA   R2L  0.177470     2885
+34  Logistic Regression     PCA   U2R  0.477612       67
+
+Best minority class performance:
+U2R: Logistic Regression (No PCA) recall=0.5373
+R2L: Logistic Regression (PCA) recall=0.1775
+
+Original train: 125,973 | Original test: 22,544
+Train category distribution:
+category
+Normal    53.46
+DoS       36.46
+Probe      9.25
+R2L        0.79
+U2R        0.04
+Name: proportion, dtype: float64
+
+Test category distribution (note: may include unseen attack types):
+category
+Normal    43.08
+DoS       33.09
+R2L       12.80
+Probe     10.74
+U2R        0.30
+Name: proportion, dtype: float64
+Train: (100778, 121) | Val: (25195, 121) | Test: (22544, 121)
+Novel/unseen category rows — Train: 0
+Novel/unseen category rows — Val: 0
+Novel/unseen category rows — Test: 0
+Train class balance:
+target
+0    0.5346
+1    0.4654
+Name: proportion, dtype: float64
+Val class balance:
+target
+0    0.5346
+1    0.4654
+Name: proportion, dtype: float64
+Test class balance:
+target
+1    0.5692
+0    0.4308
+Name: proportion, dtype: float64
+PCA equivalence check:
+  n_components (sklearn, MLE): 116
+  variance retained (sklearn): 1.0000
+  max abs diff (sklearn vs fast): 6.216730e-08
+  mean abs diff (sklearn vs fast): 4.722992e-12
+  sklearn fit_transform time: 2.2899s
+  fast (from-scratch) fit_transform time: 0.1303s
+SMOTE: 100,778 -> 269,370 samples
+PCA components: 116 | variance retained: 1.0000
+Decision Tree: best f1=0.9979 | params={'min_samples_split': 5, 'min_samples_leaf': 1, 'max_depth': 30, 'criterion': 'entropy'}
+Random Forest: best f1=0.9983 | params={'n_estimators': 150, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': 25}
+Logistic Regression: best f1=0.9729 | params={'max_iter': 500, 'C': np.float64(316.22776601683796)}
+Decision Tree: best f1_macro=0.9990 | params={'min_samples_split': 5, 'min_samples_leaf': 1, 'max_depth': 30, 'criterion': 'entropy'}
+Random Forest: best f1_macro=0.9996 | params={'n_estimators': 100, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': 25}
+Logistic Regression: best f1_macro=0.9837 | params={'max_iter': 2000, 'C': np.float64(10.0)}
+No PCA | Decision Tree | threshold=0.3333 | acc=0.7835
+No PCA | Random Forest | threshold=0.3643 | acc=0.8095
+No PCA | Logistic Regression | threshold=0.3602 | acc=0.7597
+PCA (sklearn) | Decision Tree | threshold=0.7500 | acc=0.7834
+PCA (sklearn) | Random Forest | threshold=0.3867 | acc=0.7909
+PCA (sklearn) | Logistic Regression | threshold=0.3574 | acc=0.7598
+PCA (fast) | Decision Tree | threshold=0.7500 | acc=0.7834
+PCA (fast) | Random Forest | threshold=0.3867 | acc=0.7909
+PCA (fast) | Logistic Regression | threshold=0.3621 | acc=0.7600
+Variant              No PCA  PCA (fast)  PCA (sklearn)
+Model                                                 
+Decision Tree         78.35       78.34          78.34
+Logistic Regression   75.97       76.00          75.98
+Random Forest         80.95       79.09          79.09
 
